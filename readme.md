@@ -22,18 +22,22 @@ To run this project please do the below steps,
 - Implemented Filtering with toggle button option
 - Generated the Lighthouse Report the hosted site.
 
-![ScreenShot](./LightHousereport.png)
+![LightHouseReport](./LightHousereport.png)
 
 
 #### Desktop View
 
-![ScreenShot](./DesktopView.png)
+![DesktopView-Screenshot](./DesktopView.png)
 
 #### Tablet View
 
-![ScreenShot](./TabletView.png)
+![TabletView-Screenshot](./TabletView.png)
 
 
 #### Mobile View
 
-![ScreenShot](./MobileView.png)
+![MobileView-Screenshot](./MobileView.png)
+
+#### SSR Screenshot
+
+![SSR-Screenshot](./SSR-Screenshot.png)
