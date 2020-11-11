@@ -8,7 +8,7 @@ module.exports = {
       if (err) {
         console.error(err); // eslint-disable-line
       }
-      console.info(`Listening on port ${APP_PORT} ✅`); // eslint-disable-line
+      console.info(`Listening on port ${process.env.PORT || APP_PORT} ✅`); // eslint-disable-line
     });
   }
 };
