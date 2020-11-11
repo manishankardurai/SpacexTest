@@ -1,7 +1,7 @@
 {
   "name": "test-project",
   "version": "1.0.0",
-  "description": "SSR with React 16, Node 10, Webpack 4 & Babel 7",
+  "description": "SpaceX Launch program project",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
