@@ -1,0 +1,210 @@
+html,
+body {
+  background-color: #f1e8ece0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  margin-left: 10px;
+  margin: 40px;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSideComponent {
+  width: 100%;
+  margin-bottom: 20px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(100%, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+
+  .grid > article {
+    padding: 20px
+  }
+}
+.rightSideComponent {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(100%, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+
+}
+
+.grid > article {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  box-shadow: 1px 1px -1px 0 rgba(0,0,0,.3)
+}
+
+.grid > article .top {
+  margin: 30px;
+  margin-bottom: 0px;
+}
+
+.grid > article img {
+  max-width: 100%;
+}
+
+.grid .text {
+  padding-top: 0px;
+  padding: 20px;
+  .missionTitle b {
+    color: #3562cc;
+  }
+}
+
+
+//left side
+.form-button {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-gap: 10px;
+  align-items: stretch;
+}
+
+.active {
+  background-color: #008000 !important;
+  color: #ffffff !important;
+}
+
+
+.years-button {
+  cursor: pointer;
+  float: left;
+  height: 25px;
+  color: #000000;
+  background: #90ee90;
+  border: 0;
+}
+
+.categoryTitle {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  /* For tablets: */
+  .row {
+    flex-direction: row;
+    .leftSideComponent {
+      width: 30%;
+      margin-right: 20px;
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(30%, 1fr))  !important;
+        grid-gap: 20px  !important;
+        align-items: stretch  !important;
+      }
+    }
+    .rightSideComponent {
+      width: 70%;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(35%, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* For desktop: */
+  .row {
+    flex-direction: row;
+    .leftSideComponent {
+      width: 20%;
+      margin-right: 20px;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(20%, 1fr))  !important;
+        grid-gap: 20px  !important;
+        align-items: stretch  !important;
+      }
+    }
+    .rightSideComponent {
+      width: 80%;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(20%, 1fr))  !important;
+        grid-gap: 20px  !important;
+        align-items: stretch  !important;
+      }
+    }
+  }
+  .years-button{
+    &:hover {
+      color: #ffffff;
+      background: #008000;
+      border: 0;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  /* For desktop: */
+  .row {
+    flex-direction: row;
+    .leftSideComponent {
+      width: 20%;
+      margin-right: 20px;
+      .grid {
+        display: grid  !important;
+        grid-template-columns: repeat(1,  minmax(20%, 1fr)) !important;
+        grid-gap: 20px  !important;
+        align-items: stretch  !important;
+      }
+    }
+    .rightSideComponent {
+      width: 80%;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(20%, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+      }
+    }
+  }
+  .years-button{
+    &:hover {
+      color: #ffffff;
+      background: #008000;
+      border: 0;
+    }
+  }
+}
