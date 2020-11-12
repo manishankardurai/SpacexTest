@@ -2,22 +2,21 @@ import React from 'react';
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const CardContent = ({ data, isLoading }) => {
+    let storageLandValue = null;
+    if (typeof window.sessionStorage !== 'undefined') {
+        console.log('window', window)
+        storageLandValue = window.sessionStorage.getItem('landValue');
+    }
     return (
         <main class="grid">
 
             {isLoading && <LoadingSpinner />}
 
             {data.length ? data.map((item, index) => {
+                let filteredData = null;
                 const landSuccess = item.rocket.first_stage && item.rocket.first_stage.cores;
-                let successLanding = landSuccess.map((itm, inx) => {
-                    if (item.land_success === null) {
-                        return 'No Value'
-                    }
-                    return JSON.stringify(itm.land_success)
-                })
-                if(successLanding.length > 1) {
-                    successLanding = successLanding.join(',')
-                }
+                let successLanding = landSuccess[0].land_success === null ? 'null' : landSuccess[0].land_success.toString();
+                successLanding = landSuccess.length > 1 && storageLandValue ? (storageLandValue === 'true' ? 'true' : 'false') : successLanding;
                 return (
                     <article key={item.mission_name + index}>
                         <div className='top' style={{ backgroundColor: '#f1e8ece0', textAlign: 'center' }}>

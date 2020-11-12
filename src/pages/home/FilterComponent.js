@@ -1,8 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import classnames from 'classnames';
-import { isMobileWeb } from '../../utils/globalVars.js';
 import ButtonComponent from '../../Components/Buttons.js';
 import { FilterSpaceLaunchData } from '../../actions/index.js';
 
@@ -18,7 +15,7 @@ const FilterComponent = ({ data, filterSpaceLauch, history }) => {
 
     const triggerApi = () => {
         const url = `https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${launchValue}&land_success=${landValue}&launch_year=${yearValue}`
-        filterSpaceLauch(url);
+        filterSpaceLauch(url, landValue);
     }
 
     React.useEffect(() => {
@@ -124,8 +121,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    filterSpaceLauch: (url) =>
-        dispatch(FilterSpaceLaunchData(url)),
+    filterSpaceLauch: (url, landValue) =>
+        dispatch(FilterSpaceLaunchData(url, landValue)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterComponent);

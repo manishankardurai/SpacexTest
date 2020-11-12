@@ -27,7 +27,7 @@ export const getSpaceLaunchData = () => {
 }
 
 
-export const FilterSpaceLaunchData = (url) => {
+export const FilterSpaceLaunchData = (url, landValue) => {
     return dispatch =>
         new Promise((res, rej) => {
             dispatch({
@@ -38,6 +38,7 @@ export const FilterSpaceLaunchData = (url) => {
                 'GET',
                 {},
                 response => {
+                    window.sessionStorage.setItem("landValue", landValue);
                     dispatch({
                         type: 'GET_DATA',
                         payload: response,
