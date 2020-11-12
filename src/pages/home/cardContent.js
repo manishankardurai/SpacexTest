@@ -9,12 +9,15 @@ const CardContent = ({ data, isLoading }) => {
 
             {data.length ? data.map((item, index) => {
                 const landSuccess = item.rocket.first_stage && item.rocket.first_stage.cores;
-                const successLanding = landSuccess.map((itm, inx) => {
+                let successLanding = landSuccess.map((itm, inx) => {
                     if (item.land_success === null) {
                         return 'No Value'
                     }
                     return JSON.stringify(itm.land_success)
                 })
+                if(successLanding.length > 1) {
+                    successLanding = successLanding.join(',')
+                }
                 return (
                     <article key={item.mission_name + index}>
                         <div className='top' style={{ backgroundColor: '#f1e8ece0', textAlign: 'center' }}>

@@ -26,7 +26,6 @@ export const getDataReducer = (state = initialState, action) => {
 export const loadingReducer = (state = false, action) => {
   switch (action.type) {
     case 'SHOW_LOADING':
-      console.log('showloading triggered')
       return {
         ...state,
         isLoading: true
