@@ -30,7 +30,6 @@ export const getSpaceLaunchData = () => {
 export const FilterSpaceLaunchData = (url) => {
     return dispatch =>
         new Promise((res, rej) => {
-            console.log('triggereing in filter function')
             dispatch({
                 type: 'SHOW_LOADING'
             })

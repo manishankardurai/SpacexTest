@@ -9,7 +9,6 @@ class Home extends React.Component {
 
   render() {
     const { data } = this.props.getData;
-    console.log('props', this.props)
     return (
       <>
         <header>
